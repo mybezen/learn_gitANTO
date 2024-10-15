@@ -4,11 +4,14 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "vite",
+    "build": "vite build"
   },
   "author": "Amri",
   "license": "ISC",
   "dependencies": {
+    "dat.gui": "^0.7.9",
+    "postcss": "^8.4.33",
     "three": "^0.160.1",
     "vite": "^5.0.12"
   }
