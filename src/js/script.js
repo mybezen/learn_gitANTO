@@ -63,6 +63,15 @@ const cone = new THREE.Mesh(coneGeometry, coneMaterial)
 scene.add(cone)
 cone.position.set (10, 10, 0)
 
+const CubeGeometry = new THREE.SphereGeometry(10, 50, 50)
+const CubeMaterial = new THREE.MeshStandardMaterial({
+  color: 0x00ff00
+})
+
+const cube = new THREE.Mesh(CubeGeometry, CubeMaterial)
+cube.castShadow = true;
+cube.receiveShadow = true;
+scene.add(cube)
 
 // Membuat Bola
 const sphereGeometry = new THREE.SphereGeometry(4, 50, 50)
@@ -77,14 +86,7 @@ sphere.position.set (-10, 10, 0)
 scene.add(sphere)
 
 
-// -- Membuat helper (membantu melihat posisi object)
-const axesHelper = new THREE.AxesHelper(5);
-scene.add(axesHelper);
 
-
-// Menampilkan grid helper
-const gridHelper = new THREE.GridHelper(30);
-scene.add(gridHelper);
 
 //  -- Membuat perspektif camera dan orbit control
 const camera = new THREE.PerspectiveCamera(
@@ -94,8 +96,6 @@ const camera = new THREE.PerspectiveCamera(
   1000
 );
 
-const helper = new THREE.CameraHelper( light.shadow.camera );
-scene.add( helper );
 
 // set posisi camera
 camera.position.set(-10, 30, 30);
